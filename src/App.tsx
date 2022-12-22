@@ -1,8 +1,12 @@
+import { Routers } from './routes'
+
+import '../src/styles/globals.scss'
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
+    <>
+      <Routers />
+    </>
   )
 }
 
