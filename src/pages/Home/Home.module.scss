@@ -6,8 +6,28 @@
   display: flex;
   flex-direction: column;
 
-  > div {
+  .containerDoubleCards {
     display: flex;
     margin-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    .containerDoubleCards {
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+      gap: 2rem;
+      padding: 0 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    .containerDoubleCards {
+      align-self: auto;
+    }
   }
 }

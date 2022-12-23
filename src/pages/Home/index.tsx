@@ -10,7 +10,7 @@ function Home() {
       <Header />
 
       <div className={styles.container}>
-        <div>
+        <div className={styles.containerDoubleCards}>
           <DoubleCard />
           <DoubleCard />
         </div>
