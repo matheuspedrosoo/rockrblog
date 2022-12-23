@@ -38,6 +38,12 @@
     li {
       flex-direction: row;
       font-weight: 500;
+
+      > button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
     }
   }
 }

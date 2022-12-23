@@ -3,11 +3,14 @@ import { FiMenu } from 'react-icons/fi'
 
 import styles from './Header.module.scss'
 import { useState } from 'react'
+import ContactModal from '../../pages/ContactModal'
 
 export function Header() {
   const [openMenu, setOpenMenu] = useState(false)
+  const [openModalContact, setOpenModalContact] = useState(false)
 
-  const handleTootgleMenu = () => setOpenMenu(!openMenu)
+  const handleToogleMenu = () => setOpenMenu(!openMenu)
+  const handleToogleModal = () => setOpenModalContact(!openModalContact)
 
   return (
     <div className={styles.wrapper}>
@@ -26,14 +29,18 @@ export function Header() {
               </Link>
             </li>
             <li>
-              <Link className="nav-link" to="/contact">
+              <button type="button" className="nav-link" onClick={handleToogleModal}>
                 Contact
-              </Link>
+              </button>
+
+              {openModalContact ? (
+                <ContactModal setOpenModalContact={setOpenModalContact} openModalContact={openModalContact} />
+              ) : null}
             </li>
           </ul>
         </nav>
 
-        <button className={styles.buttonMenuMobile} onClick={handleTootgleMenu}>
+        <button className={styles.buttonMenuMobile} onClick={handleToogleMenu}>
           <FiMenu size={35} color="white" />
         </button>
 
