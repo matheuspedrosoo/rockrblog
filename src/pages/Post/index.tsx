@@ -1,4 +1,5 @@
 import { Header } from '../../components/Header/Header'
+
 import styles from './Post.module.scss'
 
 function Post() {
@@ -7,7 +8,7 @@ function Post() {
       <Header />
 
       <div className={styles.container}>
-        <h1>aaaaaaaaaaaa</h1>Page Post
+        <h1>Page Post</h1>
       </div>
     </>
   )

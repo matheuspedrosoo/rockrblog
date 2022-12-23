@@ -1,4 +1,6 @@
 import { Header } from '../../components/Header/Header'
+import { DoubleCard } from '../../components/DoubleCard'
+import { Card } from '../../components/Card'
 
 import styles from './Home.module.scss'
 
@@ -8,7 +10,12 @@ function Home() {
       <Header />
 
       <div className={styles.container}>
-        <h1>Page Home</h1>
+        <div>
+          <DoubleCard />
+          <DoubleCard />
+        </div>
+
+        <Card />
       </div>
     </>
   )
