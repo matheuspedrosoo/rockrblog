@@ -7,11 +7,13 @@ import { IModalProps } from '../../interfaces/IModal'
 import { useForm } from 'react-hook-form'
 import { IFormProps } from '../../interfaces/IForm'
 import send from '../../assets/send.svg'
+import { useAnimations } from '../../hooks/useAnimations'
 
 import styles from './ContactModal.module.scss'
 
 function ContactModal({ setOpenModalContact, openModalContact }: IModalProps) {
   const portalDiv = document.getElementById('modal') as HTMLElement
+  useAnimations()
 
   const { register, handleSubmit } = useForm<IFormProps>({
     defaultValues: { name: '', email: '', phone: '', post: '' },
@@ -30,7 +32,7 @@ function ContactModal({ setOpenModalContact, openModalContact }: IModalProps) {
       <Header />
 
       <div className={styles.overlay}>
-        <form onSubmit={handleSubmit(onSubmit, onError)}>
+        <form onSubmit={handleSubmit(onSubmit, onError)} data-aos="fade-down" data-aos-duration="2000">
           <MdClose className={styles.icon} size={42} onClick={() => setOpenModalContact(!openModalContact)} />
 
           <h1 className="title">Contact</h1>

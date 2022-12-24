@@ -3,10 +3,18 @@ import { Link } from 'react-router-dom'
 import { IPostProps } from '../../interfaces/IPost'
 
 import styles from './Card.module.scss'
+import { useAnimations } from '../../hooks/useAnimations'
 
 export function Card({ id, author, title, content, image, position, createdAt }: IPostProps) {
+  useAnimations()
+
   return (
-    <div className={styles.card} style={position ? { marginLeft: 'auto' } : { marginLeft: 'unset' }}>
+    <div
+      className={styles.card}
+      style={position ? { marginLeft: 'auto' } : { marginLeft: 'unset' }}
+      data-aos={position ? 'fade-left' : 'fade-right'}
+      data-aos-duration="1000"
+    >
       <img src={image} alt="image" />
 
       <div className={styles.description}>
