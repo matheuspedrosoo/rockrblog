@@ -1,15 +1,19 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Loading } from '../components/Loading'
 
-import Home from '../pages/Home'
-import Post from '../pages/Post'
+const Home = lazy(() => import('../pages/Home'))
+const Post = lazy(() => import('../pages/Post'))
 
 export function Routers() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/post/:id" element={<Post />} />
-      </Routes>
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/post/:id" element={<Post />} />
+        </Routes>
+      </Suspense>
     </Router>
   )
 }
