@@ -7,7 +7,8 @@ import { useCloseMenu } from '../../hooks/useCloseMenu'
 import styles from './Header.module.scss'
 
 export function Header() {
-  const { openMenu, setOpenMenu, openModalContact, setOpenModalContact } = useCloseMenu()
+  const { openMenu, setOpenMenu, openModalContact, setOpenModalContact, openModalNewPost, setOpenModalNewPost } =
+    useCloseMenu()
 
   return (
     <div className={styles.wrapper}>
@@ -22,6 +23,8 @@ export function Header() {
           openModalContact={openModalContact}
           setOpenModalContact={setOpenModalContact}
           setOpenMenu={setOpenMenu}
+          openModalNewPost={openModalNewPost}
+          setOpenModalNewPost={setOpenModalNewPost}
         />
 
         <button className={styles.buttonMenuMobile} onClick={() => setOpenMenu(!openMenu)}>
@@ -33,6 +36,8 @@ export function Header() {
             openModalContact={openModalContact}
             setOpenModalContact={setOpenModalContact}
             setOpenMenu={setOpenMenu}
+            openModalNewPost={openModalNewPost}
+            setOpenModalNewPost={setOpenModalNewPost}
           />
         ) : null}
       </div>

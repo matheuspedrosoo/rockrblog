@@ -3,4 +3,7 @@ export interface IFormProps {
   email: string
   phone: string
   post: string
+  title: string
+  author: string
+  image: string
 }

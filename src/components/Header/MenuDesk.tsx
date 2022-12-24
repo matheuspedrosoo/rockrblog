@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
+import { IMenuProps } from '../../interfaces/IMenu'
 import ContactModal from '../ContactModal'
-import { IMenuMobileProps } from '../../interfaces/IMenu'
+import NewPostModal from '../NewPostModal'
 
 import styles from './Header.module.scss'
 
-export function MenuDesk({ openModalContact, setOpenModalContact }: IMenuMobileProps) {
+export function MenuDesk({ openModalContact, setOpenModalContact, openModalNewPost, setOpenModalNewPost }: IMenuProps) {
   return (
     <nav className={styles.menu}>
       <ul>
@@ -23,11 +24,13 @@ export function MenuDesk({ openModalContact, setOpenModalContact }: IMenuMobileP
           ) : null}
         </li>
         <li>
-          <button className={styles.buttonNewPost}>New Post</button>
+          <button className={styles.buttonNewPost} onClick={() => setOpenModalNewPost(!openModalNewPost)}>
+            New Post
+          </button>
 
-          {/* {openModalContact ? (
-            <ContactModal setOpenModalContact={setOpenModalContact} openModalContact={openModalContact} />
-          ) : null} */}
+          {openModalNewPost ? (
+            <NewPostModal setOpenModalNewPost={setOpenModalNewPost} openModalNewPost={openModalNewPost} />
+          ) : null}
         </li>
       </ul>
     </nav>

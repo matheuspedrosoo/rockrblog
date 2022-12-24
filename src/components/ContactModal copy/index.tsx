@@ -6,7 +6,7 @@ import { InptuCustom } from '../InputCustom'
 import { IModalProps } from '../../interfaces/IModal'
 import { useForm } from 'react-hook-form'
 import { IFormProps } from '../../interfaces/IForm'
-import send from '../../assets/send.svg'
+import send from '../../../assets/send.svg'
 import { useAnimations } from '../../hooks/useAnimations'
 
 import styles from './ContactModal.module.scss'

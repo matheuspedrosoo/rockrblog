@@ -1,16 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { InputHTMLAttributes } from 'react'
-
-import './ContactModal.module.scss'
-
-interface InputCustomProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string
-  placeholder: string
-  textArea?: boolean
-  register?: any
-  errors?: any
-  error?: any
-}
+import { InputCustomProps } from '../../interfaces/InputCustom'
+import './InputCustom.module.scss'
 
 export function InptuCustom({ label, placeholder, textArea, register, name, ...props }: InputCustomProps) {
   return (
