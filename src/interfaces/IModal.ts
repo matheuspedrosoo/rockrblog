@@ -1,6 +1,5 @@
-import { Dispatch, SetStateAction } from 'react'
+import { ReactNode } from 'react'
 
 export interface IModalProps {
-  openModalContact: boolean
-  setOpenModalContact: Dispatch<SetStateAction<boolean>>
+  children: ReactNode
 }

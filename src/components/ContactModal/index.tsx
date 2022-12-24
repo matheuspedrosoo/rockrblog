@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom'
 import { Header } from '../Header/Header'
 import { MdClose } from 'react-icons/md'
 import { InptuCustom } from '../InputCustom'
-import { IModalProps } from '../../interfaces/IModal'
+import { IModalToogleProps } from '../../interfaces/IModalToogle'
 import { useForm } from 'react-hook-form'
 import { IFormProps } from '../../interfaces/IForm'
 import send from '../../assets/send.svg'
 import { useAnimations } from '../../hooks/useAnimations'
 
 import styles from './ContactModal.module.scss'
+import { Modal } from '../Modal'
 
-function ContactModal({ setOpenModalContact, openModalContact }: IModalProps) {
+function ContactModal({ setOpenModalContact, openModalContact }: IModalToogleProps) {
   const portalDiv = document.getElementById('modal') as HTMLElement
   useAnimations()
 
@@ -31,7 +32,7 @@ function ContactModal({ setOpenModalContact, openModalContact }: IModalProps) {
     <>
       <Header />
 
-      <div className={styles.overlay}>
+      <Modal>
         <form onSubmit={handleSubmit(onSubmit, onError)} data-aos="fade-down" data-aos-duration="2000">
           <MdClose className={styles.icon} size={42} onClick={() => setOpenModalContact(!openModalContact)} />
 
@@ -47,7 +48,7 @@ function ContactModal({ setOpenModalContact, openModalContact }: IModalProps) {
             Submit
           </button>
         </form>
-      </div>
+      </Modal>
     </>,
     portalDiv
   )

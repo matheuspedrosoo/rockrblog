@@ -11,6 +11,7 @@ import pencil from '../../assets/pencil.svg'
 import photo from '../../assets/photo.svg'
 
 import styles from './NewPostModal.module.scss'
+import { Modal } from '../Modal'
 
 function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) {
   const portalDiv = document.getElementById('modal-newPost') as HTMLElement
@@ -32,7 +33,9 @@ function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) 
     <>
       <Header />
 
-      <div className={styles.overlay} aria-hidden="true">
+      {/* <div className={styles.overlay} aria-hidden="true"> */}
+
+      <Modal>
         <form onSubmit={handleSubmit(onSubmit, onError)} data-aos="fade-down" data-aos-duration="2000">
           <MdClose className={styles.icon} size={42} onClick={() => setOpenModalNewPost(!openModalNewPost)} />
 
@@ -50,7 +53,8 @@ function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) 
             Create Post
           </button>
         </form>
-      </div>
+      </Modal>
+      {/* </div> */}
     </>,
     portalDiv
   )
