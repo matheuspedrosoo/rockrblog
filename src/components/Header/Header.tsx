@@ -3,7 +3,7 @@ import { FiMenu } from 'react-icons/fi'
 
 import styles from './Header.module.scss'
 import { useState } from 'react'
-import ContactModal from '../../pages/ContactModal'
+import ContactModal from '../ContactModal'
 
 export function Header() {
   const [openMenu, setOpenMenu] = useState(false)
