@@ -22,7 +22,6 @@ body {
 
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 h1,
@@ -58,10 +57,4 @@ ul {
 
 a {
   text-decoration: none;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    overflow: auto;
-  }
 }
