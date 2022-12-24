@@ -1,15 +1,11 @@
 .container {
-  margin-top: 3rem;
   width: 100%;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-
-  .containerDoubleCards {
-    display: flex;
-    margin-bottom: 80px;
-    margin-top: 8rem;
-  }
+  flex-wrap: wrap;
+  grid-row-gap: 8rem;
+  max-width: 1920px;
+  margin: 10rem auto;
 }
 
 @media screen and (max-width: 1440px) {

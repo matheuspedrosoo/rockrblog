@@ -2,7 +2,6 @@
 
 .card {
   display: flex;
-  align-self: end;
   max-width: 80%;
 
   > img {
@@ -19,6 +18,14 @@
     align-items: center;
     justify-content: center;
     position: relative;
+
+    .textContentCard {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     .content {
       height: 315px;
@@ -77,6 +84,13 @@
           font-size: 1.6rem;
           line-height: 2.4rem;
         }
+      }
+      .textContentCard {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

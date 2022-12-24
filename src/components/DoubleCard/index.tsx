@@ -1,23 +1,19 @@
 import { Link } from 'react-router-dom'
-
-import img from '../../assets/img.svg'
+import { IPostProps } from '../../interfaces/IPost'
 import arrow from '../../assets/arrow.svg'
 
 import styles from './DoubleCard.module.scss'
 
-export function DoubleCard() {
+export function DoubleCard({ author, title, content, image }: IPostProps) {
   return (
     <div className={styles.doubleCard}>
-      <img src={img} alt="image" />
+      <img src={image} alt="image" />
 
       <div className={styles.description}>
         <div className={styles.content}>
-          <p className="text">Kelsi Monahan </p>
-          <h1 className="title">Qui occaecati vero et quibusdam non </h1>
-          <p className="text p">
-            Saepe quia culpa vero. Velit numquam corporis nihil sint enim exercitationem. Rem nulla illum sint et id
-            dolore voluptas{' '}
-          </p>
+          <p className="text">{author?.name}</p>
+          <h1 className="title">{title}</h1>
+          <p className={`text ${styles.textContent}`}>{content}</p>
         </div>
 
         <Link to="#">
