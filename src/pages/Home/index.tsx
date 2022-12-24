@@ -1,6 +1,6 @@
-import { Header } from '../../components/Header/Header'
 import React, { useEffect } from 'react'
-import { ScrollItens } from '../../components/ScrollItens'
+import { Header } from '../../components/Header/Header'
+import { ScrollPosts } from '../../components/ScrollPosts'
 import { Loading } from '../../components/Loading'
 import { useFetch } from '../../hooks/useFetch'
 
@@ -27,7 +27,7 @@ function Home() {
       <div className={styles.container}>
         {posts.map((item, index) => (
           <React.Fragment key={index}>
-            <ScrollItens data={item} itemLeng={index % 6} />
+            <ScrollPosts data={item} itemLeng={index % 6} />
           </React.Fragment>
         ))}
       </div>

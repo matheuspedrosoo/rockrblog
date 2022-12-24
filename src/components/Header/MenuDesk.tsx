@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import ContactModal from '../ContactModal'
-import { IMenuMobileProps } from '../../interfaces/IMenuProps'
+import { IMenuMobileProps } from '../../interfaces/IMenu'
 
 import styles from './Header.module.scss'
 

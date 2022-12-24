@@ -1,13 +1,8 @@
-import { IPostProps } from '../../interfaces/IPost'
-import { Card } from '../Card'
+import { IScrollPostProps } from '../../interfaces/IScrollPost'
 import { DoubleCard } from '../DoubleCard'
+import { Card } from '../Card'
 
-interface ScrollItensProps {
-  data: IPostProps
-  itemLeng: number
-}
-
-export function ScrollItens({ data, itemLeng }: ScrollItensProps) {
+export function ScrollPosts({ data, itemLeng }: IScrollPostProps) {
   const position = itemLeng === 0 ? true : false
 
   switch (itemLeng) {
@@ -23,6 +18,6 @@ export function ScrollItens({ data, itemLeng }: ScrollItensProps) {
     case 5:
       return <Card {...data} position={position} />
     default:
-      return <>Salve</>
+      return <DoubleCard {...data} />
   }
 }
