@@ -9,12 +9,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: auto;
   z-index: 2;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
 
   form {
     background: $white;

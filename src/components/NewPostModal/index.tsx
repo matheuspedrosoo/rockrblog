@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form'
 import { IFormProps } from '../../interfaces/IForm'
 import { useAnimations } from '../../hooks/useAnimations'
 import pencil from '../../assets/pencil.svg'
+import photo from '../../assets/photo.svg'
 
 import styles from './NewPostModal.module.scss'
 
@@ -31,9 +32,11 @@ function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) 
     <>
       <Header />
 
-      <div className={styles.overlay}>
+      <div className={styles.overlay} aria-hidden="true">
         <form onSubmit={handleSubmit(onSubmit, onError)} data-aos="fade-down" data-aos-duration="2000">
           <MdClose className={styles.icon} size={42} onClick={() => setOpenModalNewPost(!openModalNewPost)} />
+
+          <img src={photo} alt="photo" />
 
           <h1 className="title">New Post</h1>
 
