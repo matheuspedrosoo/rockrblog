@@ -22,6 +22,13 @@ export function MenuDesk({ openModalContact, setOpenModalContact }: IMenuMobileP
             <ContactModal setOpenModalContact={setOpenModalContact} openModalContact={openModalContact} />
           ) : null}
         </li>
+        <li>
+          <button className={styles.buttonNewPost}>New Post</button>
+
+          {/* {openModalContact ? (
+            <ContactModal setOpenModalContact={setOpenModalContact} openModalContact={openModalContact} />
+          ) : null} */}
+        </li>
       </ul>
     </nav>
   )

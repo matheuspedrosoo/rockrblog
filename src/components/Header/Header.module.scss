@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .wrapper {
-  height: 6.25rem;
+  height: 100px;
   background: $black;
   position: fixed;
   top: 0;
@@ -17,7 +17,6 @@
 .content {
   max-width: 1280px;
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,6 +33,7 @@
 
   ul {
     display: flex;
+    align-items: center;
     gap: 7.5rem;
 
     li {
@@ -44,6 +44,19 @@
         border: none;
         background: transparent;
         cursor: pointer;
+      }
+
+      .buttonNewPost {
+        border: none;
+        background: $title;
+        color: $white;
+        cursor: pointer;
+        border-radius: 70px;
+        width: 170px;
+        height: 56px;
+        font-weight: 700;
+        font-size: 2.2rem;
+        line-height: 2.6rem;
       }
     }
   }
@@ -58,9 +71,11 @@
 @media screen and (max-width: 960px) {
   .content {
     .logo {
-      h1 {
-        font-size: 2.4rem;
-        line-height: 2.3rem;
+      a {
+        h1 {
+          font-size: 3rem;
+          line-height: 2.3rem;
+        }
       }
     }
 
@@ -76,6 +91,7 @@
     .buttonMenuMobile {
       border: none;
       background: transparent;
+      line-height: 0;
     }
 
     .menuMobile {
@@ -95,11 +111,17 @@
           gap: 2rem;
           align-items: center;
           padding: 20px 10px;
+          border: 1px solid white;
 
           a,
           button {
             font-size: 2.4rem;
             line-height: 2.3rem;
+          }
+
+          .buttonNewPost {
+            height: unset;
+            background: none;
           }
         }
       }

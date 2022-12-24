@@ -12,13 +12,18 @@ export function MenuMobile({ openModalContact, setOpenModalContact }: IMenuMobil
           <Link className="nav-link" to="/">
             Posts
           </Link>
+        </li>
+        <li>
           <button type="button" className="nav-link" onClick={() => setOpenModalContact(!openModalContact)}>
             Contact
           </button>
-
           {openModalContact ? (
             <ContactModal setOpenModalContact={setOpenModalContact} openModalContact={openModalContact} />
           ) : null}
+        </li>
+
+        <li>
+          <button className={styles.buttonNewPost}>New Post</button>
         </li>
       </ul>
     </nav>
