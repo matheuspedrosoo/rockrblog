@@ -1,16 +1,13 @@
 import { Link } from 'react-router-dom'
 import { FiMenu } from 'react-icons/fi'
+import { MenuDesk } from './MenuDesk'
+import { MenuMobile } from './MenuMobile'
+import { useCloseMenu } from '../../hooks/useCloseMenu'
 
 import styles from './Header.module.scss'
-import { useState } from 'react'
-import ContactModal from '../ContactModal'
 
 export function Header() {
-  const [openMenu, setOpenMenu] = useState(false)
-  const [openModalContact, setOpenModalContact] = useState(false)
-
-  const handleToogleMenu = () => setOpenMenu(!openMenu)
-  const handleToogleModal = () => setOpenModalContact(!openModalContact)
+  const { openMenu, setOpenMenu, openModalContact, setOpenModalContact } = useCloseMenu()
 
   return (
     <div className={styles.wrapper}>
@@ -21,42 +18,22 @@ export function Header() {
           </Link>
         </div>
 
-        <nav className={styles.menu}>
-          <ul>
-            <li>
-              <Link className="nav-link" to="/post">
-                Posts
-              </Link>
-            </li>
-            <li>
-              <button type="button" className="nav-link" onClick={handleToogleModal}>
-                Contact
-              </button>
+        <MenuDesk
+          openModalContact={openModalContact}
+          setOpenModalContact={setOpenModalContact}
+          setOpenMenu={setOpenMenu}
+        />
 
-              {openModalContact ? (
-                <ContactModal setOpenModalContact={setOpenModalContact} openModalContact={openModalContact} />
-              ) : null}
-            </li>
-          </ul>
-        </nav>
-
-        <button className={styles.buttonMenuMobile} onClick={handleToogleMenu}>
+        <button className={styles.buttonMenuMobile} onClick={() => setOpenMenu(!openMenu)}>
           <FiMenu size={35} color="white" />
         </button>
 
         {openMenu ? (
-          <nav className={styles.menuMobile}>
-            <ul>
-              <li>
-                <Link className="nav-link" to="/post">
-                  Posts
-                </Link>
-                <Link className="nav-link" to="/contact">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <MenuMobile
+            openModalContact={openModalContact}
+            setOpenModalContact={setOpenModalContact}
+            setOpenMenu={setOpenMenu}
+          />
         ) : null}
       </div>
     </div>
