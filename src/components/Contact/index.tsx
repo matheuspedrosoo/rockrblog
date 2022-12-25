@@ -10,7 +10,7 @@ import { useAnimations } from '../../hooks/useAnimations'
 import { Modal } from '../Modal'
 import { Form } from '../Form'
 import send from '../../assets/send.svg'
-import styles from './ContactModal.module.scss'
+import { Button } from '../Button'
 
 function ContactModal({ setOpenModalContact, openModalContact }: IModalToogleProps) {
   const portalDiv = document.getElementById('modal') as HTMLElement
@@ -34,7 +34,11 @@ function ContactModal({ setOpenModalContact, openModalContact }: IModalTooglePro
 
       <Modal>
         <Form onSubmit={onSubmit} handleSubmit={handleSubmit} onError={onError}>
-          <MdClose className={styles.icon} size={42} onClick={() => setOpenModalContact(!openModalContact)} />
+          <MdClose
+            size={42}
+            style={{ alignSelf: 'end', cursor: 'pointer' }}
+            onClick={() => setOpenModalContact(!openModalContact)}
+          />
 
           <h1 className="title">Contact</h1>
 
@@ -43,10 +47,7 @@ function ContactModal({ setOpenModalContact, openModalContact }: IModalTooglePro
           <InptuCustom label="Phone" placeholder="Fill your phone" register={register} name="phone" />
           <InptuCustom label="Post" placeholder="Hello..." textArea register={register} name="post" />
 
-          <button className={styles.buttonSubmit}>
-            <img src={send} alt="send icon" />
-            Submit
-          </button>
+          <Button type="submit" title="Submit" src={send} alt="send icon" />
         </Form>
       </Modal>
     </>,

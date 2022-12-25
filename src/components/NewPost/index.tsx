@@ -10,11 +10,10 @@ import pencil from '../../assets/pencil.svg'
 import photo from '../../assets/photo.svg'
 import { Modal } from '../Modal'
 import { Form } from '../Form'
-import styles from './NewPostModal.module.scss'
+import { Button } from '../Button'
 
 function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) {
   const portalDiv = document.getElementById('modal-newPost') as HTMLElement
-
   const { register, handleSubmit } = useForm<IFormProps>({
     defaultValues: { title: '', author: '', image: '', post: '' },
   })
@@ -33,7 +32,11 @@ function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) 
 
       <Modal>
         <Form onSubmit={onSubmit} handleSubmit={handleSubmit} onError={onError}>
-          <MdClose className={styles.icon} size={42} onClick={() => setOpenModalNewPost(!openModalNewPost)} />
+          <MdClose
+            size={42}
+            style={{ alignSelf: 'end', cursor: 'pointer' }}
+            onClick={() => setOpenModalNewPost(!openModalNewPost)}
+          />
 
           <img src={photo} alt="photo" />
 
@@ -44,10 +47,7 @@ function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) 
           <InptuCustom label="Image URL" placeholder="Fill the image URL" register={register} name="image" />
           <InptuCustom label="Post" placeholder="Post..." textArea register={register} name="post" />
 
-          <button className={styles.buttonSubmit}>
-            <img src={pencil} alt="pencil icon" />
-            Create Post
-          </button>
+          <Button type="submit" title="Create Post" src={pencil} alt="pencil icon" />
         </Form>
       </Modal>
     </>,
