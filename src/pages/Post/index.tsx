@@ -2,7 +2,6 @@ import { Header } from '../../components/Header/Header'
 import { useLocation } from 'react-router-dom'
 import { formatDate } from '../../utils/formatDate'
 import { useAnimations } from '../../hooks/useAnimations'
-
 import styles from './Post.module.scss'
 
 function Post() {

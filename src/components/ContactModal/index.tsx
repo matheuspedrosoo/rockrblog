@@ -6,12 +6,11 @@ import { InptuCustom } from '../InputCustom'
 import { IModalToogleProps } from '../../interfaces/IModalToogle'
 import { useForm } from 'react-hook-form'
 import { IFormProps } from '../../interfaces/IForm'
-import send from '../../assets/send.svg'
 import { useAnimations } from '../../hooks/useAnimations'
-
-import styles from './ContactModal.module.scss'
 import { Modal } from '../Modal'
 import { Form } from '../Form'
+import send from '../../assets/send.svg'
+import styles from './ContactModal.module.scss'
 
 function ContactModal({ setOpenModalContact, openModalContact }: IModalToogleProps) {
   const portalDiv = document.getElementById('modal') as HTMLElement

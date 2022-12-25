@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { IPostProps } from '../../interfaces/IPost'
 import arrow from '../../assets/arrow.svg'
 import { useAnimations } from '../../hooks/useAnimations'
-
 import styles from './DoubleCard.module.scss'
 
 export function DoubleCard({ id, author, title, content, image, createdAt }: IPostProps) {

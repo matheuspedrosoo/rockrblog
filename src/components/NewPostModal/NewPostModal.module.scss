@@ -1,30 +1,9 @@
 @import '../../styles/variables.scss';
 
-// form {
-//   background: $white;
-//   max-width: 810px;
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   padding: 38px 90px 48px;
-//   position: absolute;
-//   padding-bottom: 48px;
-//   top: 2rem;
-
-//   > img {
-//     width: 35%;
-//     margin: 2rem auto 6rem;
-//   }
-
 .icon {
   align-self: end;
   cursor: pointer;
 }
-
-//   > h1 {
-//     text-align: center;
-//     margin-bottom: 50px;
-//   }
 
 .buttonSubmit {
   width: 230px;
@@ -46,13 +25,3 @@
   line-height: 3.4rem;
   color: $white;
 }
-// }
-
-// @media screen and (max-width: 960px) {
-//   form {
-//     padding: 38px 29px 100px;
-//     max-width: 100%;
-//     height: unset;
-//     top: 0;
-//   }
-// }

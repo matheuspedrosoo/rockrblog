@@ -3,7 +3,6 @@ import { Header } from '../../components/Header/Header'
 import { ScrollPosts } from '../../components/ScrollPosts'
 import { Loading } from '../../components/Loading'
 import { useFetch } from '../../hooks/useFetch'
-
 import styles from './Home.module.scss'
 
 function Home() {

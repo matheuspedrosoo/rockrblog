@@ -3,7 +3,6 @@ import { FiMenu } from 'react-icons/fi'
 import { MenuDesk } from './MenuDesk'
 import { MenuMobile } from './MenuMobile'
 import { useCloseMenu } from '../../hooks/useCloseMenu'
-
 import styles from './Header.module.scss'
 
 export function Header() {

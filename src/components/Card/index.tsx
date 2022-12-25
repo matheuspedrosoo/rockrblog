@@ -1,9 +1,8 @@
 import arrow from '../../assets/arrow.svg'
 import { Link } from 'react-router-dom'
 import { IPostProps } from '../../interfaces/IPost'
-
-import styles from './Card.module.scss'
 import { useAnimations } from '../../hooks/useAnimations'
+import styles from './Card.module.scss'
 
 export function Card({ id, author, title, content, image, position, createdAt }: IPostProps) {
   useAnimations()

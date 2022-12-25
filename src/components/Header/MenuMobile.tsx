@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { IMenuProps } from '../../interfaces/IMenu'
 import ContactModal from '../ContactModal'
-
 import styles from './Header.module.scss'
 
 export function MenuMobile({

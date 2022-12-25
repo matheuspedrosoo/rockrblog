@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { IMenuProps } from '../../interfaces/IMenu'
 import ContactModal from '../ContactModal'
 import NewPostModal from '../NewPostModal'
-
 import styles from './Header.module.scss'
 
 export function MenuDesk({ openModalContact, setOpenModalContact, openModalNewPost, setOpenModalNewPost }: IMenuProps) {

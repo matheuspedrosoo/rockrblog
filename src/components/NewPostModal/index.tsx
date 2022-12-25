@@ -10,7 +10,6 @@ import pencil from '../../assets/pencil.svg'
 import photo from '../../assets/photo.svg'
 import { Modal } from '../Modal'
 import { Form } from '../Form'
-
 import styles from './NewPostModal.module.scss'
 
 function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) {

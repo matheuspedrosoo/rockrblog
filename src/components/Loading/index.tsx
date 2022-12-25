@@ -1,5 +1,4 @@
 import { PuffLoader } from 'react-spinners'
-
 import styles from './Loading.module.scss'
 
 export function Loading() {
