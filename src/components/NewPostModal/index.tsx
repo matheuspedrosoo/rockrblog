@@ -6,23 +6,22 @@ import { InptuCustom } from '../InputCustom'
 import { INewPostProps } from '../../interfaces/INewPost'
 import { useForm } from 'react-hook-form'
 import { IFormProps } from '../../interfaces/IForm'
-import { useAnimations } from '../../hooks/useAnimations'
 import pencil from '../../assets/pencil.svg'
 import photo from '../../assets/photo.svg'
+import { Modal } from '../Modal'
+import { Form } from '../Form'
 
 import styles from './NewPostModal.module.scss'
-import { Modal } from '../Modal'
 
 function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) {
   const portalDiv = document.getElementById('modal-newPost') as HTMLElement
-  useAnimations()
 
   const { register, handleSubmit } = useForm<IFormProps>({
     defaultValues: { title: '', author: '', image: '', post: '' },
   })
 
   const onSubmit = (data: IFormProps) => {
-    console.log(data)
+    alert(JSON.stringify(data))
   }
 
   const onError = (errors: any) => {
@@ -33,10 +32,8 @@ function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) 
     <>
       <Header />
 
-      {/* <div className={styles.overlay} aria-hidden="true"> */}
-
       <Modal>
-        <form onSubmit={handleSubmit(onSubmit, onError)} data-aos="fade-down" data-aos-duration="2000">
+        <Form onSubmit={onSubmit} handleSubmit={handleSubmit} onError={onError}>
           <MdClose className={styles.icon} size={42} onClick={() => setOpenModalNewPost(!openModalNewPost)} />
 
           <img src={photo} alt="photo" />
@@ -52,9 +49,8 @@ function NewPostModal({ setOpenModalNewPost, openModalNewPost }: INewPostProps) 
             <img src={pencil} alt="pencil icon" />
             Create Post
           </button>
-        </form>
+        </Form>
       </Modal>
-      {/* </div> */}
     </>,
     portalDiv
   )

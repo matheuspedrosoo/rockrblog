@@ -11,6 +11,7 @@ import { useAnimations } from '../../hooks/useAnimations'
 
 import styles from './ContactModal.module.scss'
 import { Modal } from '../Modal'
+import { Form } from '../Form'
 
 function ContactModal({ setOpenModalContact, openModalContact }: IModalToogleProps) {
   const portalDiv = document.getElementById('modal') as HTMLElement
@@ -21,7 +22,7 @@ function ContactModal({ setOpenModalContact, openModalContact }: IModalTooglePro
   })
 
   const onSubmit = (data: IFormProps) => {
-    console.log(data)
+    alert(JSON.stringify(data))
   }
 
   const onError = (errors: any) => {
@@ -33,7 +34,7 @@ function ContactModal({ setOpenModalContact, openModalContact }: IModalTooglePro
       <Header />
 
       <Modal>
-        <form onSubmit={handleSubmit(onSubmit, onError)} data-aos="fade-down" data-aos-duration="2000">
+        <Form onSubmit={onSubmit} handleSubmit={handleSubmit} onError={onError}>
           <MdClose className={styles.icon} size={42} onClick={() => setOpenModalContact(!openModalContact)} />
 
           <h1 className="title">Contact</h1>
@@ -47,7 +48,7 @@ function ContactModal({ setOpenModalContact, openModalContact }: IModalTooglePro
             <img src={send} alt="send icon" />
             Submit
           </button>
-        </form>
+        </Form>
       </Modal>
     </>,
     portalDiv
