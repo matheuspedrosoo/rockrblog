@@ -1,0 +1,137 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  height: 100px;
+  background: $black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .menuMobile,
+  .buttonMenuMobile {
+    display: none;
+  }
+
+  .logo {
+    cursor: pointer;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 7.5rem;
+
+    li {
+      flex-direction: row;
+      font-weight: 500;
+
+      > button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .buttonNewPost {
+        border: none;
+        background: $title;
+        color: $white;
+        cursor: pointer;
+        border-radius: 70px;
+        width: 170px;
+        height: 56px;
+        font-weight: 700;
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .wrapper {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .content {
+    .logo {
+      a {
+        h1 {
+          font-size: 3rem;
+          line-height: 2.3rem;
+        }
+      }
+    }
+
+    .menu {
+      display: none;
+    }
+
+    .menuMobile,
+    .buttonMenuMobile {
+      display: block;
+    }
+
+    .buttonMenuMobile {
+      border: none;
+      background: transparent;
+      line-height: 0;
+    }
+
+    .menuMobile {
+      background: $black;
+      width: 200px;
+      position: absolute;
+      right: 0;
+      top: 3.25rem;
+      border: 1px solid $white;
+      opacity: 1;
+
+      ul {
+        display: block;
+
+        li {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          align-items: center;
+          padding: 20px 10px;
+          border: 1px solid white;
+
+          a,
+          button {
+            font-size: 2.4rem;
+            line-height: 2.3rem;
+          }
+
+          .buttonNewPost {
+            height: unset;
+            background: none;
+          }
+        }
+      }
+    }
+
+    .logo {
+      h1 {
+        font-size: 2.4rem;
+        line-height: 2.3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@import '../../styles/variables.scss';
+
+.doubleCard {
+  display: flex;
+  width: 50%;
+
+  > img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .description {
+    width: 640px;
+    background: $white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 132px;
+
+    .content {
+      height: 250px;
+      width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+
+      h1 {
+        margin-top: 7px;
+        margin-bottom: 13px;
+      }
+    }
+
+    a {
+      position: absolute;
+      bottom: 15px;
+      right: 30px;
+    }
+
+    .textContent {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .doubleCard {
+    flex-wrap: wrap;
+    > img {
+      flex: 1;
+    }
+
+    .description {
+      flex: 1;
+      padding: 16px 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .doubleCard {
+    padding: 0 20px;
+    width: 100%;
+    flex-direction: column;
+
+    > img {
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+    }
+
+    .description {
+      width: 100%;
+      padding: 0 0;
+
+      .content {
+        width: 100%;
+        height: 320px;
+        padding: 15px 15px;
+
+        h1 {
+          font-size: 2.4rem;
+          line-height: 2.3rem;
+        }
+
+        .text {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+      }
+    }
+  }
+}
